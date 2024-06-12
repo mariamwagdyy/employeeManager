@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Update Employee Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      form {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .result-container {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px auto;
+      }
+      .no-match-found {
+        color: #ff0000;
+      }
+      .match-found {
+        color: #008000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Update Employee Data</h2>
+
+    <div class="result-container" th:if="${noIdEntered}">
+      <p class="no-match-found" th:text="${noIdEntered}"></p>
+    </div>
+
+    <div class="result-container" th:if="${noIdFound}">
+      <p class="no-match-found">No Employee with such ID found!</p>
+    </div>
+
+    <div class="result-container" th:if="${ID}">
+      <p class="match-found" th:text="${ID}"></p>
+
+      <form action="/update-employee-data" method="post">
+        <input type="hidden" name="ID" th:value="${ID}"/>
+        <label for="Designation">Designation:</label>
+        <input
+          type="text"
+          id="Designation"
+          name="Designation"
+          th:placeholder="${Designation}"
+        />
+
+        <p><button type="submit">Update</button></p>
+      </form>
+    </div>
+  </body>
+</html>

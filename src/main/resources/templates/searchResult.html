@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .result-container {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: fit-content;
+        margin: 10px auto;
+      }
+
+      .match-found {
+        color: #008000;
+      }
+
+      .no-match-found {
+        color: #ff0000;
+      }
+
+      .sub {
+        color: #333;
+        font-weight: bold;
+        font-size: large;
+      }
+      .details {
+        font-weight: bold;
+      }
+      .found {
+        color: #008000;
+        font-weight: bold;
+        font-size: x-large;
+      }
+      .notFound {
+        color: #800000;
+        font-weight: bold;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Search Result</h2>
+
+    <div class="result-container">
+      <p class="sub" th:text="${result}"></p>
+
+      <th:block th:each="emp : ${employees}">
+        <div>
+          <p class="details">employee details:</p>
+          <p>First name: <span th:text="${emp.getFirstName()}"></span></p>
+          <p>Last name: <span th:text="${emp.getLastName()}"></span></p>
+          <p>Employee ID: <span th:text="${emp.getEmployeeID()}"></span></p>
+          <p>Designation: <span th:text="${emp.getDesignation()}"></span></p>
+          <p>
+            Known Languages: <span th:text="${emp.getKnownLanguages()}"></span>
+          </p>
+        </div>
+        <!-- Add a separator between each student -->
+        <hr />
+      </th:block>
+    </div>
+  </body>
+</html>

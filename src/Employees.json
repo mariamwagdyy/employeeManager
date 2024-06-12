@@ -1,0 +1,25 @@
+[ {
+  "FirstName" : "John",
+  "LastName" : "Adamo",
+  "EmployeeID" : 2000,
+  "Designation" : "Developer",
+  "KnownLanguages" : [ {
+    "LanguageName" : "Perl",
+    "ScoreOutof100" : 30
+  }, {
+    "LanguageName" : "Java",
+    "ScoreOutof100" : 65
+  }, {
+    "LanguageName" : "C++",
+    "ScoreOutof100" : 70
+  } ]
+}, {
+  "FirstName" : "Mariam",
+  "LastName" : "Wagdy",
+  "EmployeeID" : "2020",
+  "Designation" : "backend",
+  "KnownLanguages" : [ {
+    "LanguageName" : "Java",
+    "ScoreOutof100" : 100
+  } ]
+} ]

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retreive Students</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      select {
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 200px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      form {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/retreive-employee" method="post">
+      <label for="language">Enter The language:</label>
+      <input
+        type="text"
+        id="language"
+        name="language"
+        placeholder="Enter Language"
+      />
+      <br /><br />
+      <label for="operation">Score Operation:</label>
+      <select name="operation" id="operation">
+        <option value="Greater">Greater Than</option>
+        <option value="Less">Less Than</option>
+        <option value="Equal">Equal</option>
+      </select>
+      <br /><br />
+      <label for="score">Enter The score:</label>
+      <input type="text" id="score" name="score" placeholder="Enter score" />
+      <br /><br />
+      <label for="sortType">Sort Type:</label>
+      <select name="sortType" id="sortType">
+        <option value="Ascending">Ascending</option>
+        <option value="Descending">Descending</option>
+      </select>
+      <br /><br />
+      <button type="submit">Retreive Employee</button>
+    </form>
+  </body>
+</html>

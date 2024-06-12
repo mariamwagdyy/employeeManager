@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      h2 {
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      input {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 200px;
+      }
+
+      #container {
+        margin-bottom: 20px;
+        width: 260px;
+      }
+      #numberOfStudents {
+        width: 50px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 0px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .button-container {
+        background-color: #fff;
+        display: flex;
+        margin-top: 20px;
+        width: 425px;
+        height: 75px;
+      }
+
+      .box {
+        width: 425px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Employees</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Employees management system</h1>
+    <form class="box" action="/delete-employee" method="post">
+      <label for="deleteEmployeeID">Enter Employee ID to Delete:</label>
+      <input
+        type="text"
+        id="deleteEmployeeID"
+        name="deleteEmployeeID"
+        placeholder="Enter Employee ID"
+      />
+      <input type="submit" value="Delete" />
+    </form>
+
+    <form class="box" action="/get-update-employee-page" method="get">
+      <label for="updateEmployeeID">Enter Employee ID to Update:</label>
+      <input
+        type="text"
+        id="updateEmployeeID"
+        name="updateEmployeeID"
+        placeholder="Enter Employee ID"
+      />
+      <input type="submit" value="Update" />
+    </form>
+    <div class="button-container">
+      <form action="/add" method="post">
+        <input type="submit" value="Add" />
+      </form>
+      <form action="/read" method="get">
+        <input type="submit" value="Read" />
+      </form>
+      <form action="/search" method="post">
+        <input type="submit" value="Search" />
+      </form>
+
+      <form action="/retreive" method="post">
+        <input type="submit" value="Retreive" />
+      </form>
+    </div>
+  </body>
+</html>

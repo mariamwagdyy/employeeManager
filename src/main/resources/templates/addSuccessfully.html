@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adding new Employee result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .result-container {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+      }
+
+      .match-found {
+        color: #008000;
+      }
+
+      .no-match-found {
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="title">Adding new employee result:</h3>
+
+    <div class="result-container" th:if="${successMessage}">
+      <p class="match-found" th:text="${successMessage}"></p>
+    </div>
+  </body>
+</html>
